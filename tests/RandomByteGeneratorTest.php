@@ -1,8 +1,10 @@
 <?php
+declare(strict_types = 1);
 namespace Datapp\Tool;
 
 use PHPUnit\Framework\TestCase;
 use Datapp\Tool\RandomByteGenerator;
+use TypeError;
 
 /**
  * RandomByteGeneratorTest
@@ -26,7 +28,7 @@ class RandomByteGeneratorTest extends TestCase
     
     public function testInstantiateWithInvalidArgumentType()
     {
-        $this->expectException('InvalidArgumentException');
+        $this->expectException(TypeError::class);
         $generator = new RandomByteGenerator('test');
     }
     

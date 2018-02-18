@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 namespace Datapp\Tool;
 
 use InvalidArgumentException;
@@ -21,11 +22,8 @@ class RandomByteGenerator
      * @param int $length
      * @throws InvalidArgumentException
      */
-    public function __construct($length)
+    public function __construct(int $length)
     {
-        if (!is_int($length)) {
-            throw new InvalidArgumentException(sprintf('integer expected, %s given', gettype($length)));
-        }
 
         if ($length <= 0) {
             throw new InvalidArgumentException(sprintf('length has to be greater than 0, %d given', $length));
@@ -40,6 +38,6 @@ class RandomByteGenerator
      */
     public function getString()
     {
-        return openssl_random_pseudo_bytes($this->length);
+        return random_bytes($this->length);
     }
 }

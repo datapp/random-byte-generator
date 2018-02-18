@@ -5,7 +5,7 @@ RandomByteGenerator is a simple wrapper class to generate a random string of byt
 
 ## Requirements
 
-- PHP 5.3 or higher
+- PHP 7.0 or higher
 
 ## Installation
 
@@ -26,7 +26,7 @@ add to your composer.json
 
 then run
 ```sh
-$ php composer.phar require datapp/random-byte-generator:~1.0
+$ php composer.phar require datapp/random-byte-generator:~2.0
 ```
 
 ## Support
