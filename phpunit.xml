@@ -1,0 +1,23 @@
+<phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/5.0/phpunit.xsd"
+    bootstrap="tests/bootstrap.php" backupGlobals="false" backupStaticAttributes="false">
+    <testsuites>
+        <testsuite>
+            <directory>./tests</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./src</directory>
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="coverage-clover" target="logs/coverage.xml"/>
+        <log type="coverage-php" target="logs/coverage.serialized"/>
+        <log type="coverage-text" target="php://stdout" showUncoveredFiles="false"/>
+        <log type="junit" target="logs/logfile.xml"/>
+        <log type="testdox-html" target="logs/testdox.html"/>
+        <log type="testdox-text" target="logs/testdox.txt"/>
+    </logging>
+</phpunit>
